@@ -1,71 +1,73 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h> // memset 사용을 위해 추가
 #include "myQ.h"
 
-void test_q1()
+void test_osrq()
 {
     for(int i = 0; i < 10; i++)
     {
-        q1_enqueue(i);
-    }
-
-    for(int i = 0; i < 10; i++)
-    {
-        
-        printf("q1_dequeue( %d )\n", q1_dequeue());
-    }
-
-    q1_enqueue(14);
-    q1_enqueue(41);
-    printf("q1_dequeue( %d )\n", q1_dequeue());
-}
-
-void test_q2()
-{
-    for(int i = 0; i < 15; i++)
-    {
-        q2_enqueue(i);
+        SORQ_enqueue(i);
     }
 
     for(int i = 0; i < 10; i++)
     {
         
-        printf("q2_dequeue( %d )\n", q2_dequeue());
+        printf("SORQ_dequeue( %d )\n", SORQ_dequeue());
     }
 
-    q2_enqueue(14);
-    q2_enqueue(41);
-    printf("q2_dequeue( %d )\n", q2_dequeue());
+    SORQ_enqueue(14);
+    SORQ_enqueue(41);
+    printf("SORQ_dequeue( %d )\n", SORQ_dequeue());
 }
 
-void test_q3()
+void test_cntq()
 {
     for(int i = 0; i < 15; i++)
     {
-        q3_enqueue(i);
+        CNTQ_enqueue(i);
+    }
+
+    for(int i = 0; i < 10; i++)
+    {
+        
+        printf("CNTQ_dequeue( %d )\n", CNTQ_dequeue());
+    }
+
+    CNTQ_enqueue(14);
+    CNTQ_enqueue(41);
+    printf("CNTQ_dequeue( %d )\n", CNTQ_dequeue());
+}
+
+void test_mskq()
+{
+    for(int i = 0; i < 15; i++)
+    {
+        MSKQ_enqueue(i);
     }
 
     for(int i = 0; i < 5; i++)
     {
-        q3_enqueue(i);
+        MSKQ_enqueue(i);
     }
 
     for(int i = 0; i < 10; i++)
     {
         
-        printf("q3_dequeue( %d )\n", q3_dequeue());
+        printf("MSKQ_dequeue( %d )\n", MSKQ_dequeue());
     }
 
-    q3_enqueue(14);
-    q3_enqueue(41);
-    printf("q3_dequeue( %d )\n", q3_dequeue());
+    MSKQ_enqueue(14);
+    MSKQ_enqueue(41);
+    printf("MSKQ_dequeue( %d )\n", MSKQ_dequeue());
 }
+
+
 
 
 int main()
 {
-
-   test_q3();
+    
     
     
     return 1;

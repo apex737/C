@@ -11,19 +11,35 @@ extern int PowerQ[POWER_OF_TWO_LEN];
 extern int rpos, wpos;
 extern int cnt;
 
-bool q1_isFull();
-bool q1_isEmpty();
-void q1_enqueue(int val);
-int q1_dequeue();
+#define FRAME_SIZE 32
+#define FRAME_MASK (FRAME_SIZE - 1)
+#define VECTOR_SIZE 50
 
-bool q2_isFull();
-bool q2_isEmpty();
-void q2_enqueue(int val);
-int q2_dequeue();
+typedef struct {
+    int frame[FRAME_SIZE][VECTOR_SIZE];
+    int wpos;
+    int colSum[VECTOR_SIZE];
+} VectorQueue;
 
-bool q3_isFull();
-bool q3_isEmpty();
-void q3_enqueue(int val);
-int q3_dequeue();
+bool OSRQ_isFull();
+bool OSRQ_isEmpty();
+void OSRQ_enqueue(int val);
+int OSRQ_dequeue();
+
+bool CNTQ_isFull();
+bool CNTQ_isEmpty();
+void CNTQ_enqueue(int val);
+int CNTQ_dequeue();
+
+bool MSKQ_isFull();
+bool MSKQ_isEmpty();
+void MSKQ_enqueue(int val);
+int MSKQ_dequeue();
+
+
+void vq_init(VectorQueue* q);
+void vq_push(VectorQueue* q, int vec[VECTOR_SIZE]);
+int* vq_get(VectorQueue* q, int idx);
+void computeAverage(VectorQueue* q, float avg[VECTOR_SIZE]);
 
 #endif
