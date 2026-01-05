@@ -32,6 +32,7 @@ bool insertItem(myArr* pArr, uint8_t idx, uint8_t val)
     }
 }
 
+
 bool removeItem(myArr* pArr, uint8_t idx)
 {
     if(pArr->cnt <= 0){
