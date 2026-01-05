@@ -1,4 +1,4 @@
-#include "array.h"
+#include "StaticArray.h"
 
 
 void initArr(myArr* pArr)
