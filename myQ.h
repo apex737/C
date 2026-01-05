@@ -3,13 +3,13 @@
 
 #include <limits.h>
 #include <stdbool.h>
+#include <string.h> // memset 사용을 위해 추가
 #define MAX_LEN 10
 #define POWER_OF_TWO_LEN 16
 #define MASK (POWER_OF_TWO_LEN - 1)
 extern int q[MAX_LEN];
 extern int PowerQ[POWER_OF_TWO_LEN];
-extern int rpos, wpos;
-extern int cnt;
+extern unsigned int rpos, wpos, cnt;
 
 #define FRAME_SIZE 32
 #define FRAME_MASK (FRAME_SIZE - 1)
@@ -21,10 +21,10 @@ typedef struct {
     int colSum[VECTOR_SIZE];
 } VectorQueue;
 
-bool OSRQ_isFull();
-bool OSRQ_isEmpty();
-void OSRQ_enqueue(int val);
-int OSRQ_dequeue();
+bool SORQ_isFull();
+bool SORQ_isEmpty();
+void SORQ_enqueue(int val);
+int SORQ_dequeue();
 
 bool CNTQ_isFull();
 bool CNTQ_isEmpty();
