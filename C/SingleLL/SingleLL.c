@@ -37,7 +37,7 @@ void releaseNode(Node* pNode)
 int main()
 {
     Node* pMyNode;
-    pMyNode = createNode(1, "hoon", "010-1234-1234");
+    pMyNode = createNode(1, "hoon", "010-1234-4321");
     releaseNode(pMyNode);
     return 0;
 }
