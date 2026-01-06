@@ -59,7 +59,7 @@ class DoubleLL:
             
     def pop_tail(self):
         if self.tail is None:
-            return
+            return None
         else:
             ret = self.tail.data
             if self.head == self.tail:
