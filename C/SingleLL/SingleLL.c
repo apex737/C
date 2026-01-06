@@ -10,7 +10,6 @@ typedef struct {
 } Node;
 
 
-
 // 더미헤드 vs 포인터
 Node* createNode(int id, const char* name, const char* phone)
 {
