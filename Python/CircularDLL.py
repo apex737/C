@@ -136,9 +136,9 @@ def run_test():
     
     # 원형 연결 확인 (Tail의 다음이 Head인지)
     if dll.head.prev.data == 30 and dll.head.prev.next == dll.head:
-        print("  ✅ Circular Link Checked (Tail <-> Head 연결 정상)")
+        print("  Circular Link Checked (Tail <-> Head 연결 정상)")
     else:
-        print("  ❌ Circular Link Broken")
+        print("  Circular Link Broken")
     print("-" * 30)
 
     # 2. 이동 및 현재 위치(pos) 테스트
@@ -160,8 +160,8 @@ def run_test():
     found_20 = dll.search_bwd(20)
     found_99 = dll.search_bwd(99)
     
-    print(f"  Search 20: {'✅ Found' if found_20 else '❌ Failed'}")
-    print(f"  Search 99: {'✅ Not Found' if not found_99 else '❌ Wrongly Found'}")
+    print(f"  Search 20: {'Found' if found_20 else '❌ Failed'}")
+    print(f"  Search 99: {'Not Found' if not found_99 else '❌ Wrongly Found'}")
     print("-" * 30)
 
     # 4. 삭제 테스트 (Pop Head/Tail)
@@ -186,17 +186,17 @@ def run_test():
     print(f"  Pop Tail... Last value: {last_val}")
     
     if dll.head is None and dll.pos is None:
-        print("  ✅ List is completely empty (Head/Pos is None)")
+        print("  List is completely empty (Head/Pos is None)")
     else:
-        print("  ❌ Memory Leak or Pointer Error")
+        print("  Memory Leak or Pointer Error")
         
     # 빈 리스트에서 삭제 시도
     empty_pop = dll.pop_head()
     if empty_pop is None:
-        print("  ✅ Safe Pop from empty list checked")
+        print("  Safe Pop from empty list checked")
     print("-" * 30)
     
-    print("\n🎉 모든 테스트 완료!")
+    print("\n모든 테스트 완료!")
 
 # 실행
 if __name__ == "__main__":
