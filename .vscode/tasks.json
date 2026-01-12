@@ -8,8 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 // 로컬에서 바로 실행하기 위한 경로설정
-                "${fileDirname}/*.c", 
-                "${fileDirname}/SingleLL/*.c",          
+                "${fileDirname}/*.c",     
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
